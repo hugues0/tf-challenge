@@ -5,12 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev":"nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js"
   },
   "repository": "https://github.com/hugues0/tf-challenge.git",
   "author": "NTWARI Hugues",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
