@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --exec babel-node ./src/index.js"
-    
   },
   "repository": "https://github.com/hugues0/tf-challenge.git",
   "author": "NTWARI Hugues",
@@ -22,6 +21,10 @@
     "express": "^4.17.1",
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.7.0",
+    "sequelize-cli": "^6.2.0"
   }
 }
