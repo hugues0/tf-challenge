@@ -1,6 +1,10 @@
+import { config } from 'dotenv'
 import express from 'express'
 import cors from 'cors'
+import employeesRoute from './routes/employeesRoute'
+import managersRoute from './routes/managersRoute'
 
+config()
 
 const app = express()
 app.use(cors())
