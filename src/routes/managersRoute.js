@@ -3,7 +3,7 @@ import auth from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.post("/auth/signup", addManager);
-router.post("/auth/signin", managerLogin);
+router.post("/signup", addManager);
+router.post("/signin", managerLogin);
 
 export default router;
