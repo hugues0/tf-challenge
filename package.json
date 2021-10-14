@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Task force Challenge",
   "main": "index.js",
-  "type": "module",
+  
   "scripts": {
     "dev": "nodemon --exec babel-node ./src/index.js",
     "build": "babel index.js — out-file index-compiled.js",
@@ -11,7 +11,7 @@
     "demigrate": "npx sequelize-cli db:migrate:undo:all",
     "migrate": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "undo-seeds": "npx sequelize-cli db:seed:undo:all",
-    "run-seeds": "npx sequelize-cli db:seed:all"
+    "seeds": "npx sequelize-cli db:seed:all"
   },
   "repository": "https://github.com/hugues0/tf-challenge.git",
   "author": "NTWARI Hugues",
@@ -20,6 +20,7 @@
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

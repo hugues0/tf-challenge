@@ -1,5 +1,5 @@
 import joi from 'joi'
-import {Response} from '../helpers/response'
+import Response from '../helpers/response'
 
 function validator(req,res,next) {
     const schema = {

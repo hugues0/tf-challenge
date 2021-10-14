@@ -1,4 +1,4 @@
-export class Response {
+ class Response {
   static errorResponse(res, msg, status) {
     return res.status(status).json({
       status,
@@ -14,3 +14,5 @@ export class Response {
     });
   }
 }
+
+export default Response

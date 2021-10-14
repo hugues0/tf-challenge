@@ -1,6 +1,6 @@
 import sequelize from "sequelize";
-import db from "../db/models/index.js";
-import { op, where, cast, col } from "sequelize";
+import db from "../db/models";
+//import { op, where, cast, col } from "sequelize";
 
 class employeesService {
   static async createEmployee(newwEmployee) {
