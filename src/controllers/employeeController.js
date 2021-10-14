@@ -1,5 +1,5 @@
-import employeesService from '../services/employeesService'
-import Response from '../helpers/response'
+import employeesService from '../services/employeesService.js'
+import Response from '../helpers/response.js'
 
 
 class employeesController {
@@ -25,7 +25,7 @@ class employeesController {
         }
     }
 
-    static async getEmployeeById(req,res) {
+    static async getSingleEmployee(req,res) {
         try{
             const employee = await employeesService.findEmployeeById(req.params.id)
             if (!employee || employee.count <=0) {
@@ -36,7 +36,7 @@ class employeesController {
         }
     }
 
-    static async updateEmployeeById(req,res) {
+    static async updateEmployee(req,res) {
         try{
             const employee = await employeesService.findEmployeeById(req.params.id)
             if(!employee || employee.count<=0) {
@@ -60,7 +60,7 @@ class employeesController {
         }
     }
 
-    static async deleteEmployeeById(req,res) {
+    static async deleteEmployee(req,res) {
         try{
             const employee = await employeesService.findEmployeeByIda(req.params.id)
             if (!employee || employee.count <= 0) {

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { Response } from "../helpers/response";
+import { Response } from "../helpers/response.js";
 
 const auth = (req, res, next) => {
   const token = req.header("token");

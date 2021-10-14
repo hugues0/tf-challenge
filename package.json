@@ -5,7 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./src/index.js"
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel index.js — out-file index-compiled.js",
+    "db-migrate": "npx sequelize db:migrate",
+    "demigrate": "npx sequelize-cli db:migrate:undo:all",
+    "migrate": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "undo-seeds": "npx sequelize-cli db:seed:undo:all",
+    "run-seeds": "npx sequelize-cli db:seed:all"
   },
   "repository": "https://github.com/hugues0/tf-challenge.git",
   "author": "NTWARI Hugues",
