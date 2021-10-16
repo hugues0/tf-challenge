@@ -1,6 +1,7 @@
 import employeesService from '../services/employeesService.js'
-import Response from '../helpers/response.js'
-
+import Response from '../helpers/response'
+import randomCodeGen from '../helpers/codeGen';
+import mailer from "../helpers/mailSender"
 
 class employeesController {
     static async getAllEmployees (req,res) {
@@ -18,9 +19,18 @@ class employeesController {
 
     static async addEmployee(req,res) {
         try{
+            req.body.code = randomCodeGen();
             const newEmployee = await employeesService.createEmployee(req.body)
-            const info = req.body
-            return Response.successResponse(res,201,"New employee recorded",info)
+            const emailView = mailer.emailConfirmation(req.body);
+            mailer.sendEmail(req.body.email,"WELCOME",emailView)
+            return Response.successResponse(
+              res,
+              201,
+              "New employee recorded",
+              newEmployee
+            );
+
+
         } catch (error) {
             return Response.errorResponse(res,error.message,500)
         }

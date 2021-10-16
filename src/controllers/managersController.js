@@ -13,15 +13,8 @@ class ManagersController {
   static async addManager(req, res) {
     try {
       let {
-        name,
-        nId,
-        code,
-        phoneNumber,
         email,
         password,
-        dob,
-        status,
-        position,
       } = req.body;
       const existingManager = await ManagersServices.findUserByEmail(email);
       if (existingManager) {
@@ -31,35 +24,16 @@ class ManagersController {
           409
         );
       }
+      req.body.code = randomCodeGen();
       password = await passwordEncryptor(password);
-       await ManagersServices.createManager({
-        name,
-        nId,
-        code: randomCodeGen(),
-        phoneNumber,
-        email,
-        password,
-        dob,
-        status,
-        position,
-      });
-      
-        const managerRes = {
-          name,
-          nId,
-          code,
-          phoneNumber,
-          email,
-          dob,
-          status,
-          position,
-        };
-
+       const addManager = await ManagersServices.createManager(req.body);
+        const managerInfo = { ...addManager };
+        delete managerInfo.password;
         return Response.successResponse(
           res,
           201,
           "New manager added",
-          managerRes
+          managerInfo
         );
      
     } catch (error) {
