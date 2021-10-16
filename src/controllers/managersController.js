@@ -23,7 +23,8 @@ class ManagersController {
         );
       }
       req.body.code = randomCodeGen();
-      password = await passwordEncryptor(password);
+      req.body.password = await passwordEncryptor(password);
+      req.body.position = "MANAGER";
       const addManager = await ManagersServices.createManager(req.body);
       const managerInfo = { ...addManager };
       delete managerInfo.password;

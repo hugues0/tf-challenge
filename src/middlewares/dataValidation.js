@@ -10,7 +10,6 @@ function validator(req,res,next) {
       password: joi.string().required(),
       dob: joi.date().required(),
       status: joi.string().required(),
-      position: joi.string().required(),
     };
 
     const { error } = joi.validate(req.body, schema);

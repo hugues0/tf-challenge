@@ -1,0 +1,35 @@
+const mockData = {
+  managerComplete: {
+    name: "NTWARI Hugues",
+    nId: "1199680127478028",
+    phoneNumber: "250781407229",
+    email: "ntwari.huguess@gmail",
+    password: "18700",
+    status: "inactive",
+    dob: "01/16/1996",
+    position: "MANAGER",
+  },
+  managerInvalidId: {
+    name: "NTWARI Hugues",
+    nId: "1199680",
+    phoneNumber: "250781407229",
+    email: "ntwari.huguess@gmail",
+    password: "18700",
+    status: "inactive",
+    dob: "01/16/1996",
+    position: "MANAGER",
+  },
+  managerInvalidEmail: {
+    name: "NTWARI Hugues",
+    nId: "1199680127478028",
+    phoneNumber: "250781407229",
+    email: "ntwari.huguess",
+    password: "18700",
+    status: "inactive",
+    dob: "01/16/1996",
+    position: "MANAGER",
+  },
+  
+};
+
+export default mockData
