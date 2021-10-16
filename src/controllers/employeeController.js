@@ -19,7 +19,8 @@ class employeesController {
     static async addEmployee(req,res) {
         try{
             const newEmployee = await employeesService.createEmployee(req.body)
-            return Response.successResponse(res,201,"New employee recorded",{name:newEmployee.name,code:newEmployee.code,email:newEmployee.email})
+            const info = req.body
+            return Response.successResponse(res,201,"New employee recorded",info)
         } catch (error) {
             return Response.errorResponse(res,error.message,500)
         }

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     status: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "ACTIVE",
+      
     },
     position: { type: DataTypes.STRING, allowNull: false },
   });

@@ -1,3 +1,4 @@
+import sequalize from 'sequelize'
 import db from '../db/models'
 
 class ManagersServices {
