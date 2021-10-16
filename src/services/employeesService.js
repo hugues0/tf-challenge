@@ -15,7 +15,67 @@ class employeesService {
     try {
       const employee = await db.employee.findOne({ where: { nId: id } });
       if (!employee) return null;
-      return student;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByPhone(phone) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { phoneNumber: phone },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByCode(code) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { code: code },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByName(name) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { name: name },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByPosition(position) {
+    try {
+      const employee = await db.employee.findAndCountAll({
+        where: { position: position },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByEmail(email) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { email: email },
+      });
+      if (!employee) return null;
+      return employee;
     } catch (er) {
       return undefined;
     }
