@@ -8,7 +8,7 @@ const auth = (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT);
-    req.user = decoded;
+    req.user = decoded.payload;
     next();
   } catch (error) {
     return Response.errorResponse(res,"Access denied,expired or invalid token", 401);

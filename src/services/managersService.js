@@ -19,6 +19,24 @@ class ManagersServices {
       return undefined;
     }
   }
+
+  static async updatePassword(id, updateInfo) {
+    try {
+      return await db.manager.update({ ...updateInfo }, { where: { nId: id } });
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findManageBynId(id) {
+    try {
+      const employee = await db.manager.findOne({ where: { nId: id } });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
 }
 
 export default ManagersServices
