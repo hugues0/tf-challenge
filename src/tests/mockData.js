@@ -39,6 +39,22 @@ const mockData = {
     dob: "01/16/1996",
     position: "MANAGER",
   },
+  managerValidCredentials: {
+    email: "ntwari.huguess@gmail.com",
+    password: "18700",
+  },
+  managerInvalidCredentialsEmail: {
+    email: "niyooooo@gmail.com",
+    password: "189999",
+  },
+  managerNoExistentResetEmail: {
+    email: "niyooooo@gmail.com",
+    
+  },
+  managerWithExistingResetEmail: {
+    email: "ntwari.huguess@gmail.com",
+    
+  },
   EmployeeComplete: {
     name: "Niyo Eric",
     nId: "1199680127478028",
