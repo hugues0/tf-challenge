@@ -13,7 +13,7 @@ class employeesService {
 
   static async findEmployeeById(id) {
     try {
-      const employee = await db.employee.findOne({ where: { nId: id } });
+      const employee = await db.employee.findOne({ where: { id: id } });
       if (!employee) return null;
       return employee;
     } catch (er) {
@@ -83,7 +83,7 @@ class employeesService {
 
   static async deleteEmployeeById(id) {
     try {
-      await db.employee.destroy({ where: { nId: id } });
+      await db.employee.destroy({ where: { id: id } });
       return {
         status: 200,
         message: "Employee successfully deleted",
@@ -109,7 +109,7 @@ class employeesService {
     try {
       return await db.employee.update(
         { name, nId, phoneNumber, email, dob, status, position },
-        { where: { nId: id } }
+        { where: { id: id } }
       );
     } catch (error) {
       return {

@@ -1,7 +1,7 @@
 import express from 'express'
 import auth from '../middlewares/auth.js'
 import employeeController from '../controllers/employeeController.js'
-
+import validateData from '../middlewares/employeeValidation'
 const {
   getAllEmployees,
   addEmployee,
@@ -17,7 +17,7 @@ const {
 
 const router = express.Router()
 
-router.post('/',addEmployee)
+router.post('/',validateData,auth,addEmployee)
 router.put("/:id", auth, updateEmployee);
 router.delete("/:id", auth, deleteEmployee);
 router.get("/", auth, getAllEmployees);
