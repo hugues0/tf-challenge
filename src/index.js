@@ -15,6 +15,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/employees",employeesRoute)
 app.use("/api/v1/auth",managersRoute);
+app.get("/", (req, res) =>
+  res.status(200).send({ status: 200, message: "welcome to TF Challenge backend" })
+);
+app.use((req, res) =>
+  res.status(404).send({ status: 404, error: "route Not Found!" })
+);
 const port  = process.env.PORT || 3000;
 app.listen(port,() => console.log(`listening on port ${port}`))
 
