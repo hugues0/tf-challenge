@@ -13,9 +13,69 @@ class employeesService {
 
   static async findEmployeeById(id) {
     try {
-      const employee = await db.employee.findOne({ where: { nId: id } });
+      const employee = await db.employee.findOne({ where: { id: id } });
       if (!employee) return null;
-      return student;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByPhone(phone) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { phoneNumber: phone },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByCode(code) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { code: code },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByName(name) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { name: name },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByPosition(position) {
+    try {
+      const employee = await db.employee.findAndCountAll({
+        where: { position: position },
+      });
+      if (!employee) return null;
+      return employee;
+    } catch (er) {
+      return undefined;
+    }
+  }
+
+  static async findEmployeeByEmail(email) {
+    try {
+      const employee = await db.employee.findOne({
+        where: { email: email },
+      });
+      if (!employee) return null;
+      return employee;
     } catch (er) {
       return undefined;
     }
@@ -23,7 +83,7 @@ class employeesService {
 
   static async deleteEmployeeById(id) {
     try {
-      await db.employee.destroy({ where: { nId: id } });
+      await db.employee.destroy({ where: { id: id } });
       return {
         status: 200,
         message: "Employee successfully deleted",
@@ -49,7 +109,7 @@ class employeesService {
     try {
       return await db.employee.update(
         { name, nId, phoneNumber, email, dob, status, position },
-        { where: { nId: id } }
+        { where: { id: id } }
       );
     } catch (error) {
       return {
