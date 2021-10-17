@@ -3,7 +3,7 @@ const mockData = {
     name: "NTWARI Hugues",
     nId: "1199680127478028",
     phoneNumber: "250781407229",
-    email: "ntwari.huguess@gmail",
+    email: "ntwari.huguess@gmail.com",
     password: "18700",
     status: "inactive",
     dob: "01/16/1996",
@@ -29,7 +29,34 @@ const mockData = {
     dob: "01/16/1996",
     position: "MANAGER",
   },
-  
+  managerAlreadyExists: {
+    name: "NTWARI Hugues",
+    nId: "1199680127478028",
+    phoneNumber: "250781407229",
+    email: "ntwari.huguess@gmail.com",
+    password: "18700",
+    status: "inactive",
+    dob: "01/16/1996",
+    position: "MANAGER",
+  },
+  EmployeeComplete: {
+    name: "Niyo Eric",
+    nId: "1199680127478028",
+    phoneNumber: "250781407229",
+    email: "niyoeric@gmail.com",
+    status: "inactive",
+    dob: "01/16/1996",
+    position: "DEVOPS",
+  },
+  EmployeeAlreadyExists: {
+    name: "Niyo Eric",
+    nId: "1199680127478028",
+    phoneNumber: "250781407229",
+    email: "niyoeric@gmail.com",
+    status: "inactive",
+    dob: "01/16/1996",
+    position: "DEVOPS",
+  },
 };
 
 export default mockData

@@ -27,6 +27,8 @@ class employeesController {
 
   static async addEmployee(req, res) {
     try {
+      const existingEmployee = await employeesService.findEmployeeByEmail(req.body.email);
+      if (existingEmployee) return Response.errorResponse(res,"Employee with that email already exists",409)
       req.body.code = randomCodeGen();
       const newEmployee = await employeesService.createEmployee(req.body);
       const emailView = mailer.emailConfirmation(req.body);

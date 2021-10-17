@@ -9,6 +9,7 @@ function validateData(req, res, next) {
     email: joi.string().required().email(),
     dob: joi.date().required(),
     status: joi.string().required(),
+    position: joi.string().required(),
   };
 
   const { error } = joi.validate(req.body, schema);
